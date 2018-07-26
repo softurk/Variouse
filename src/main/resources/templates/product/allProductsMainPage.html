@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products - CRUD in Spring Boot with Spring Data JPA</title>
+        <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+        <script type="text/javascript">
+        	function myFunction() {
+				event.preventDefault();
+				var href = $(this).attr('href');
+				$('#myModal #delRef').attr('href', href);
+				$('#myModal').modal();
+        	}
+		</script>
+    </head>
+    <body>
+        <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+        <div class="container-fluit">
+            <div class="row">
+            	<div class="col-md-2">
+					<!--/*/ <th:block th:include="fragments/category :: body"></th:block> /*/-->  
+            	</div>         
+                <div class="col-md-10 ">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">All Products</div>
+                         <div class="col-sm-6 col-md-3" th:each = "product : ${products}" style="padding:0px;">
+                         	<div class="thumbnail" style="margin:0px;" >
+      							<!--<img th:src="${product.picture}" />-->
+      							<a th:href="${'/product/view/' + product.productId}" class="thumbnail"><img src="http://www.resimistanbul.com/wp-content/uploads/2016/03/RESIM-ISTANBUL-WEB-ANA-SLIDER2.jpg" /></a>
+							    <div class="caption">
+							    	<h3 th:text = "${product.productName}"></h3>
+							      	<div class="btn-group" role="group" aria-label="...">
+                               	    	<!--<button type="button" onclick="myFunction()" id="basketBtn" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>-->
+                               	    	<a th:href="${'/basket/addBasket/' + userId}" onclick="myFunction()"  class="btn btn-info delBtn"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                                    </div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+            
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Ürünü Sepete Ekle</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<p class="alert alert-success">
+			      	  Ürünü sepete eklemek istediğinize emin misiniz?
+			      	</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+			        <a th:href="${'/basket/addBasket/' + userId}" class="btn btn-success" id="delRef">Ekle</a>
+			      </div>
+			    </div>
+			  </div>
+			</div> 
+			            
+        </div>
+        <!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+        <script src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+    </body>
+</html>

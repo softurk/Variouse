@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    	<meta charset="UTF-8">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                            aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" th:href="@{/product}">Main Page</a>
+                </div>                
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li th:class="${activePage == 'profile'}? 'active' : ''"><a href="#" th:href="@{/user/userMainPage}">Profile</a></li>
+                        <li th:class="${activePage == 'allProducts'}? 'active' : ''"><a href="#" th:href="@{/product}">All Products</a></li>
+                        <li th:class="${activePage == 'products'}? 'active' : ''"><a href="#" th:href="@{/basket/myProducts/}+${userId}">My Products</a></li>
+                        <li th:class="${activePage == 'basket'}? 'active' : ''"><a href="#" th:href="@{/basket/}+${userId}">My Basket</a></li>
+	                    <li style="position: absolute; right: 175px;">
+							<form class="form-inline my-2 my-lg-0" th:action="@{/product/}" style="padding: 8px;" method="get">
+				        		<input name="productName" class="form-control mr-sm-2" type="text" placeholder="Site İçi Arama" aria-label="Search">
+				    			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				   	 		</form>	                    	
+	                    </li>
+	                    <li style="position: absolute; right: 15px;">
+		                    <form th:action="@{/logout}" style="padding: 8px;" method="get">
+								<button style="width:150px" class="btn btn-md btn-danger btn-block" name="registration" type="Submit">Logout</button>
+							</form>
+						</li>
+					</ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>User Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome-4.7.0/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+</head>
+
+<body>
+	<!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">Profil Resmi</div>
+				<div class="panel-body">
+					<!--<img th:src="@{/images/beer.jpg}" class="img-responsive center-block" width="400" height="400" alt="Beer" />-->
+					<div class="form-group thumbnail">
+						<label for="inputPicture">Profil Resmi</label>
+						<img src="http://sguru.org/wp-content/uploads/2017/06/cool-profile-pictures-8DtpgWJB_400x400.jpeg" id="inputPicture" name="productPicture" th:field="*{product.productPicture}"/>                        	
+			        </div> 
+				</div>
+				<!--<p class="user-message-text text-center" th:utext="${userMessage}"></p>-->
+				<div class="panel-footer"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+            	<div class="panel panel-default">
+                	<div class="panel-heading">Kişisel Bilgiler
+                		<a href="#" style="float: right;">Profili Düzenle</a>
+                	</div>
+                    <div class="panel-body">
+                    	<div class="form-group">
+                            <label for="inputName">Ad</label>
+                            <span th:utext="${userFirstname}" class="form-control" id="inputName" disabled="disabled"></span>
+                       	</div>
+                        <div class="form-group">
+                        	<label for="inputLastname">Soyad</label>
+                           	<span th:utext="${userLastname}" class="form-control" id="inputLastname" disabled="disabled"></span>
+                        </div>
+                        <div class="form-group">
+                        	<label for="inputMail">E-Mail</label>
+                       	    <span th:utext="${userMail}" class="form-control" id="inputMail" disabled="disabled"></span>
+                        </div>
+                   </div>
+                   <div class="panel-footer"></div>
+            	</div>				
+			</div>
+		</div>
+	</div>
+	<!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+</body>
+</html>

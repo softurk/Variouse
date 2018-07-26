@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Products - CRUD in Spring Boot with Spring Data JPA</title>
+<!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+<script type="text/javascript">
+location.reload(forceGet);
+</script>
+</head>
+<body>
+	<!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+	<div class="container">
+		<div class="row">
+        	<div class="col-md-10 col-sm-offset-1">
+            	<div class="panel panel-default">
+                	<!-- Default panel contents -->
+                    <div class="panel-heading">My Basket</div>
+                    <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Ürün Adı</th>
+                                    <th>Ürün Tipi</th>
+                                    <th>Ürün Fiyat</th>
+                                    <th>Para Birimi</th>
+                                    <th>Telefon Numarası</th>
+                                    <th>Adres</th>
+                                    <th>Açıklama</th>
+                                    <th>Ürünü İncele</th>
+                                    <th>Sepetten Çıkar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<!--  
+                                <tr th:each = "product : ${products}" th:if="!${#lists.isEmpty(products)}">
+                                    <td th:text = "${product.productName}"></td>
+                                    <td th:text = "${product.productType}"></td>
+                                    <td th:text = "${product.productCost}"></td>
+                                    <td th:text = "${product.productCostType}"></td>
+                                    <td th:text = "${product.productUserNumber}"></td>
+                                    <td th:text = "${product.productUserAddress}"></td>
+                                    <td th:text = "${product.productExplanation}"></td>
+                                </tr>
+                                -->
+                                <tr th:each = "basket : ${baskets}" th:if="!${#lists.isEmpty(baskets)}">
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                    <td th:text = "${userId}"></td>
+                                   	<td>
+                                        <div class="btn-group" role="group" aria-label="...">
+                                        	<!--<a href="#" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>-->
+                                        	<a th:href="${'/product/view/' + basketId}" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="...">
+                                        	<a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        </div>
+                                    </td>
+                                </tr>                            
+                                <tr th:if="${#lists.isEmpty(baskets)}">
+                                    <td>No contact exists!</td>
+                                </tr>
+                            </tbody>
+                    </table>
+                    <!--  
+                   	<div class="col-sm-6 col-md-3" th:each = "basket : ${baskets}" style="padding:0px;">
+                    	<div class="thumbnail" style="margin:0px;" >
+      						<a th:href="${'/user/products/view/' + basketId}" class="thumbnail"><img src="http://www.resimistanbul.com/wp-content/uploads/2016/03/RESIM-ISTANBUL-WEB-ANA-SLIDER2.jpg" /></a>
+							<div class="caption">
+								<h3 th:text = "${userId}"></h3>
+							</div>
+						</div>
+					</div>
+					-->
+    	        </div>
+        	</div>
+    	</div>            
+	</div>
+</body>
+</html>

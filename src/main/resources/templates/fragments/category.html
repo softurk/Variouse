@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="list-group" >
+		<a href="#" class="list-group-item disabled active">Kategoriler</a>
+		<div th:each="category : ${categories}">
+			<a class="list-group-item" href="#" th:text="${category.categoryName}" ></a>
+		</div>
+	</div>
+</body>
+</html>

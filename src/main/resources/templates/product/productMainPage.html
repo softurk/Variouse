@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products - CRUD in Spring Boot with Spring Data JPA</title>
+        <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+    </head>
+    <body>
+        <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">My Products 
+                        	<a th:href="@{/product/add}" class="btn btn-primary">
+                        		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        	</a>
+                        </div>
+                        <!--  
+                         <div class="col-sm-6 col-md-4" th:each = "product : ${products}" style="padding:0px;">
+                         	<div class="thumbnail" style="margin:0px;" >
+                         		<a th:href="${'/product/view/' + product.productId}" class="thumbnail"><img src="http://www.resimistanbul.com/wp-content/uploads/2016/03/RESIM-ISTANBUL-WEB-ANA-SLIDER2.jpg" /></a>
+							    <div class="caption">
+							    	<h3 th:text = "${product.productName}"></h3>
+							      	<div class="btn-group" role="group" aria-label="...">
+                                        <a th:href="${'/product/edit/' + product.productId}" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                                        <a th:href="${'/product/delete/'+ product.productId + '/' + basketId}" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                	</div>
+								</div>
+							</div>
+						</div>
+						-->
+                         <div class="col-sm-6 col-md-4" th:each = "basket : ${baskets}" style="padding:0px;">
+                         	<div class="thumbnail" style="margin:0px;" >
+                         		<a th:href="${'/product/view/' + productId}" class="thumbnail"><img src="http://www.resimistanbul.com/wp-content/uploads/2016/03/RESIM-ISTANBUL-WEB-ANA-SLIDER2.jpg" /></a>
+							    <div class="caption">
+							    	<h3 th:text = "${productName}"></h3>
+							      	<div class="btn-group" role="group" aria-label="...">
+                                        <a th:href="${'/product/edit/' + productId}" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                                        <a th:href="${'/product/delete/'+ productId + '/' + basketId}" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                	</div>
+								</div>
+							</div>
+						</div>						
+					</div>
+                </div>
+            </div>
+        </div>
+        <!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+        <script src="..../static/js/app.js" th:src="@{/js/app.js}"></script>
+    </body>
+</html>
