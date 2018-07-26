@@ -23,9 +23,6 @@ E-commerce Site
 <h2>Register Page</h2>
 ![register_page](https://user-images.githubusercontent.com/21079863/37270397-b629a27a-25df-11e8-8724-46aa5c05ce78.png)
 
-<h2>Profile Page</h2>
-![profile_page](https://user-images.githubusercontent.com/21079863/37270405-be1bfa1e-25df-11e8-9a8d-08c417934dc6.png)
-
 <h2>Main Page</h2>
 ![main_page](https://user-images.githubusercontent.com/21079863/37270415-c8a01a10-25df-11e8-9a02-2f86bb4d2071.png)
 
